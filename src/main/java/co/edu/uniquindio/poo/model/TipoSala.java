@@ -5,7 +5,7 @@ public enum TipoSala {
     VIP(5000),
     TRES_D(7000);
 
-    private final double recargo;
+     private final double recargo;
 
     TipoSala(double recargo) {
         this.recargo = recargo;
