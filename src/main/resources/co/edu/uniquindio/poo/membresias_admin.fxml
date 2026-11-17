@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.poo.viewController.MembresiasAdminViewController"
+      spacing="18">
+
+    <VBox styleClass="header">
+        <Label text="Programa de Membresías"
+               styleClass="header-title"/>
+
+        <Label text="Consulta de niveles y clientes afiliados"
+               styleClass="header-subtitle"/>
+    </VBox>
+
+    <HBox spacing="18" VBox.vgrow="ALWAYS">
+
+        <padding>
+            <Insets top="20" right="20"
+                    bottom="20" left="20"/>
+        </padding>
+
+        <VBox styleClass="card"
+              prefWidth="360"
+              spacing="10">
+
+            <Label text="Niveles"
+                   styleClass="card-title"/>
+
+            <TextArea fx:id="txtNiveles"
+                      editable="false"
+                      prefHeight="220"/>
+        </VBox>
+
+        <VBox styleClass="card"
+              HBox.hgrow="ALWAYS"
+              spacing="10">
+
+            <Label text="Clientes"
+                   styleClass="card-title"/>
+
+            <ListView fx:id="listaClientes"
+                      onMouseClicked="#seleccionar"
+                      VBox.vgrow="ALWAYS"/>
+
+            <Label fx:id="lblDetalle"
+                   text="Seleccione un cliente"
+                   styleClass="section-title"/>
+        </VBox>
+    </HBox>
+
+    <Button text="Volver"
+            onAction="#volver"
+            styleClass="secondary-button"
+            maxWidth="120"/>
+
+</VBox>

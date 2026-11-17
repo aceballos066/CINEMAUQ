@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.poo.viewController.TarifaViewController"
+      spacing="18">
+
+    <VBox styleClass="header">
+        <Label text="Tarifas de Entrada"
+               styleClass="header-title"/>
+    </VBox>
+
+    <HBox alignment="CENTER"
+          spacing="20"
+          VBox.vgrow="ALWAYS">
+
+        <VBox styleClass="card"
+              spacing="12"
+              prefWidth="370">
+
+            <Label text="Tipo de entrada"/>
+
+            <ComboBox fx:id="cbTipo"
+                      onAction="#cargarValor"/>
+
+            <Label text="Valor"/>
+
+            <TextField fx:id="txtValor"/>
+
+            <Button text="Guardar tarifa"
+                    onAction="#guardar"
+                    styleClass="success-button"/>
+        </VBox>
+
+        <VBox styleClass="card"
+              spacing="10"
+              prefWidth="450">
+
+            <Label text="Tarifas configuradas"
+                   styleClass="card-title"/>
+
+            <ListView fx:id="listaTarifas"
+                      prefHeight="300"/>
+        </VBox>
+    </HBox>
+
+    <Button text="Volver"
+            onAction="#volver"
+            styleClass="secondary-button"
+            maxWidth="120"/>
+
+</VBox>

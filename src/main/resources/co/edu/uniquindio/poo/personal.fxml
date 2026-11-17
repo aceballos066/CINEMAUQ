@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.poo.viewController.PersonalViewController"
+      spacing="18">
+
+    <VBox styleClass="header">
+        <Label text="Personal del Cinema"
+               styleClass="header-title"/>
+    </VBox>
+
+    <HBox spacing="18"
+          VBox.vgrow="ALWAYS">
+
+        <padding>
+            <Insets top="20"
+                    right="20"
+                    bottom="20"
+                    left="20"/>
+        </padding>
+
+        <VBox styleClass="card"
+              spacing="10"
+              HBox.hgrow="ALWAYS">
+
+            <Label text="Administradores"
+                   styleClass="card-title"/>
+
+            <ListView fx:id="listaAdministradores"
+                      VBox.vgrow="ALWAYS"/>
+
+            <Button text="Registrar administrador"
+                    onAction="#registrarAdministrador"
+                    styleClass="primary-button"/>
+        </VBox>
+
+        <VBox styleClass="card"
+              spacing="10"
+              HBox.hgrow="ALWAYS">
+
+            <Label text="Operarios"
+                   styleClass="card-title"/>
+
+            <ListView fx:id="listaOperarios"
+                      VBox.vgrow="ALWAYS"/>
+
+            <Button text="Registrar operario"
+                    onAction="#registrarOperario"
+                    styleClass="primary-button"/>
+        </VBox>
+    </HBox>
+
+    <Button text="Volver"
+            onAction="#volver"
+            styleClass="secondary-button"
+            maxWidth="120"/>
+
+</VBox>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.poo.viewController.ClientesViewController"
+      spacing="14">
+
+    <VBox styleClass="header">
+        <Label text="Clientes y Membresías"
+               styleClass="header-title"/>
+    </VBox>
+
+    <HBox spacing="16" VBox.vgrow="ALWAYS">
+        <padding>
+            <Insets top="20" right="20"
+                    bottom="20" left="20"/>
+        </padding>
+
+        <VBox styleClass="card" spacing="9" prefWidth="360">
+
+            <Label text="Registrar cliente"
+                   styleClass="card-title"/>
+
+            <TextField fx:id="txtIdentificacion"
+                       promptText="Identificación"/>
+
+            <TextField fx:id="txtNombre"
+                       promptText="Nombre"/>
+
+            <TextField fx:id="txtAfiliacion"
+                       promptText="Código afiliación"/>
+
+            <ComboBox fx:id="cbTipoCliente"/>
+
+            <Button text="Registrar cliente"
+                    onAction="#registrar"
+                    styleClass="success-button"/>
+
+            <Label text="Asignar membresía"
+                   styleClass="section-title"/>
+
+            <ComboBox fx:id="cbMembresia"/>
+
+            <Button text="Asignar al cliente seleccionado"
+                    onAction="#asignarMembresia"
+                    styleClass="primary-button"/>
+
+            <Button text="Dejar sin membresía"
+                    onAction="#quitarMembresia"
+                    styleClass="secondary-button"/>
+        </VBox>
+
+        <VBox styleClass="card"
+              spacing="10"
+              HBox.hgrow="ALWAYS">
+
+            <Label text="Clientes registrados"
+                   styleClass="card-title"/>
+
+            <ListView fx:id="listaClientes"
+                      onMouseClicked="#seleccionar"
+                      VBox.vgrow="ALWAYS"/>
+
+            <Label fx:id="lblEstadoMembresia"
+                   text="Seleccione un cliente"
+                   styleClass="section-title"/>
+        </VBox>
+    </HBox>
+
+    <Button text="Volver"
+            onAction="#volver"
+            styleClass="secondary-button"
+            maxWidth="120"/>
+
+</VBox>

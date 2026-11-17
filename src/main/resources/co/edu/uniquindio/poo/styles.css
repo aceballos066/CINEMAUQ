@@ -1,0 +1,18 @@
+.root { -fx-font-family: "Segoe UI"; -fx-background-color: linear-gradient(to bottom right, #f5f7fb, #eef2f8); }
+.header { -fx-background-color: #16324f; -fx-padding: 20 26; }
+.header-title { -fx-text-fill: white; -fx-font-size: 26px; -fx-font-weight: bold; }
+.header-subtitle { -fx-text-fill: #cbd8e6; -fx-font-size: 14px; }
+.card { -fx-background-color: white; -fx-background-radius: 14; -fx-padding: 18; -fx-effect: dropshadow(gaussian, rgba(20,40,70,0.12), 16, 0.18, 0, 4); }
+.card-title { -fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #16324f; }
+.section-title { -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #294a68; }
+.button { -fx-background-radius: 9; -fx-padding: 9 16; -fx-cursor: hand; -fx-font-weight: bold; }
+.primary-button { -fx-background-color: #1f6feb; -fx-text-fill: white; }
+.secondary-button { -fx-background-color: #e8eef5; -fx-text-fill: #18344f; }
+.danger-button { -fx-background-color: #c93c4a; -fx-text-fill: white; }
+.success-button { -fx-background-color: #25875f; -fx-text-fill: white; }
+.menu-button { -fx-background-color: white; -fx-text-fill: #16324f; -fx-border-color: #d6e0ea; -fx-border-radius: 10; -fx-background-radius: 10; -fx-min-height: 58; -fx-font-size: 15px; }
+.combo-box, .text-field, .date-picker { -fx-background-radius: 8; }
+.list-view, .text-area { -fx-background-radius: 10; -fx-border-color: #dce5ee; -fx-border-radius: 10; }
+.metric { -fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1f6feb; }
+.muted { -fx-text-fill: #6c7d8d; }
+.price { -fx-font-size: 25px; -fx-font-weight: bold; -fx-text-fill: #25875f; }

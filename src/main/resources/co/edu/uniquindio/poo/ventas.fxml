@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.poo.viewController.VentasViewController"
+      spacing="16">
+
+    <VBox styleClass="header">
+        <Label text="Consulta y Cancelación de Ventas"
+               styleClass="header-title"/>
+    </VBox>
+
+    <HBox spacing="18" VBox.vgrow="ALWAYS">
+
+        <padding>
+            <Insets top="20"
+                    right="20"
+                    bottom="20"
+                    left="20"/>
+        </padding>
+
+        <VBox styleClass="card"
+              HBox.hgrow="ALWAYS">
+
+            <ListView fx:id="listaVentas"
+                      onMouseClicked="#seleccionar"
+                      VBox.vgrow="ALWAYS"/>
+        </VBox>
+
+        <VBox styleClass="card"
+              spacing="12"
+              prefWidth="430">
+
+            <Label text="Detalle"
+                   styleClass="card-title"/>
+
+            <TextArea fx:id="txtDetalle"
+                      editable="false"
+                      wrapText="true"
+                      VBox.vgrow="ALWAYS"/>
+
+            <Button text="Cancelar venta seleccionada"
+                    onAction="#cancelar"
+                    styleClass="danger-button"/>
+        </VBox>
+
+    </HBox>
+
+    <Button text="Volver"
+            onAction="#volver"
+            styleClass="secondary-button"
+            maxWidth="120"/>
+
+</VBox>
