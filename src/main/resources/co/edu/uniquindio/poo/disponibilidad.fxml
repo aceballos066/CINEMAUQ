@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.poo.viewController.DisponibilidadViewController"
+      spacing="16">
+
+    <VBox styleClass="header">
+        <Label text="Disponibilidad por Función"
+               styleClass="header-title"/>
+    </VBox>
+
+    <VBox styleClass="card"
+          spacing="12"
+          VBox.vgrow="ALWAYS">
+
+        <HBox spacing="12">
+            <ComboBox fx:id="cbPelicula"
+                      onAction="#pelicula"
+                      prefWidth="400"
+                      promptText="Película"/>
+
+            <ComboBox fx:id="cbFuncion"
+                      onAction="#funcion"
+                      prefWidth="500"
+                      promptText="Función"/>
+        </HBox>
+
+        <Label fx:id="lblTotales"
+               text="Seleccione una película y una función"
+               styleClass="section-title"/>
+
+        <ListView fx:id="listaAsientos"
+                  VBox.vgrow="ALWAYS"/>
+    </VBox>
+
+    <Button text="Volver"
+            onAction="#volver"
+            styleClass="secondary-button"
+            maxWidth="120"/>
+</VBox>

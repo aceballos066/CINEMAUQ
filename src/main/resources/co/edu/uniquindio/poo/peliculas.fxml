@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.poo.viewController.PeliculaViewController"
+      spacing="14">
+
+    <VBox styleClass="header">
+        <Label text="Gestión de Películas" styleClass="header-title"/>
+        <Label text="La cartelera inicia con 10 películas y permite registrar nuevas."
+               styleClass="header-subtitle"/>
+    </VBox>
+
+    <HBox spacing="16" VBox.vgrow="ALWAYS">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <VBox styleClass="card" spacing="10" prefWidth="410">
+            <Label text="Datos" styleClass="card-title"/>
+
+            <TextField fx:id="txtCodigo" promptText="Código"/>
+            <TextField fx:id="txtTitulo" promptText="Título"/>
+
+            <ComboBox fx:id="cbGenero" promptText="Género"/>
+
+            <TextField fx:id="txtDuracion"
+                       promptText="Duración en minutos"/>
+
+            <ComboBox fx:id="cbClasificacion"
+                      promptText="Clasificación"/>
+
+            <HBox spacing="8">
+                <Button text="Registrar"
+                        onAction="#registrar"
+                        styleClass="success-button"/>
+
+                <Button text="Modificar"
+                        onAction="#modificar"
+                        styleClass="primary-button"/>
+
+                <Button text="Deshabilitar"
+                        onAction="#deshabilitar"
+                        styleClass="danger-button"/>
+            </HBox>
+
+            <Button text="Limpiar"
+                    onAction="#limpiar"
+                    styleClass="secondary-button"/>
+        </VBox>
+
+        <VBox styleClass="card"
+              spacing="10"
+              HBox.hgrow="ALWAYS">
+
+            <Label text="Cartelera registrada"
+                   styleClass="card-title"/>
+
+            <ListView fx:id="listaPeliculas"
+                      onMouseClicked="#seleccionar"
+                      VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </HBox>
+
+    <Button text="Volver"
+            onAction="#volver"
+            styleClass="secondary-button"
+            maxWidth="120"/>
+
+</VBox>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.poo.viewController.ClienteMenuViewController"
+      spacing="22">
+
+    <VBox styleClass="header">
+        <Label text="Portal de Cliente"
+               styleClass="header-title"/>
+
+        <HBox spacing="8">
+            <Label fx:id="lblUsuario"
+                   styleClass="header-subtitle"/>
+            <Label text="•"
+                   styleClass="header-subtitle"/>
+            <Label fx:id="lblMembresia"
+                   styleClass="header-subtitle"/>
+        </HBox>
+    </VBox>
+
+    <VBox alignment="CENTER"
+          VBox.vgrow="ALWAYS"
+          spacing="18">
+
+        <GridPane hgap="16"
+                  vgap="16"
+                  maxWidth="760">
+
+            <Button text="Cartelera"
+                    onAction="#cartelera"
+                    styleClass="menu-button"
+                    maxWidth="Infinity"
+                    GridPane.rowIndex="0"/>
+
+            <Button text="Funciones"
+                    onAction="#funciones"
+                    styleClass="menu-button"
+                    maxWidth="Infinity"
+                    GridPane.columnIndex="1"
+                    GridPane.rowIndex="0"/>
+
+            <Button text="Disponibilidad"
+                    onAction="#disponibilidad"
+                    styleClass="menu-button"
+                    maxWidth="Infinity"
+                    GridPane.rowIndex="1"/>
+
+            <Button text="Tarifas"
+                    onAction="#tarifas"
+                    styleClass="menu-button"
+                    maxWidth="Infinity"
+                    GridPane.columnIndex="1"
+                    GridPane.rowIndex="1"/>
+
+            <Button text="Mi membresía"
+                    onAction="#membresia"
+                    styleClass="menu-button"
+                    maxWidth="Infinity"
+                    GridPane.rowIndex="2"/>
+
+            <Button text="Mis compras"
+                    onAction="#compras"
+                    styleClass="menu-button"
+                    maxWidth="Infinity"
+                    GridPane.columnIndex="1"
+                    GridPane.rowIndex="2"/>
+
+            <columnConstraints>
+                <ColumnConstraints percentWidth="50"/>
+                <ColumnConstraints percentWidth="50"/>
+            </columnConstraints>
+
+        </GridPane>
+
+        <Button text="Volver al inicio"
+                onAction="#inicio"
+                styleClass="secondary-button"/>
+
+    </VBox>
+
+    <padding>
+        <Insets bottom="26"/>
+    </padding>
+
+</VBox>

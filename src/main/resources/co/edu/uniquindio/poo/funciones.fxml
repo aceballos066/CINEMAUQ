@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.poo.viewController.FuncionViewController"
+      spacing="14">
+
+    <VBox styleClass="header">
+        <Label text="Programación de Funciones"
+               styleClass="header-title"/>
+    </VBox>
+
+    <HBox spacing="16" VBox.vgrow="ALWAYS">
+        <padding>
+            <Insets top="20" right="20"
+                    bottom="20" left="20"/>
+        </padding>
+
+        <VBox styleClass="card"
+              spacing="10" prefWidth="400">
+
+            <TextField fx:id="txtCodigo"
+                       promptText="Código función"/>
+
+            <Label text="Película"/>
+
+            <ComboBox fx:id="cbPelicula"
+                      prefWidth="350"/>
+
+            <Label text="Sala"/>
+
+            <ComboBox fx:id="cbSala"
+                      prefWidth="350"/>
+
+            <DatePicker fx:id="dpFecha"/>
+
+            <TextField fx:id="txtHora"
+                       promptText="Hora HH:mm"/>
+
+            <TextField fx:id="txtValorBase"
+                       promptText="Valor base"/>
+
+            <Button text="Programar función"
+                    onAction="#programar"
+                    styleClass="success-button"
+                    maxWidth="Infinity"/>
+        </VBox>
+
+        <VBox styleClass="card"
+              spacing="10" HBox.hgrow="ALWAYS">
+
+            <Label text="Funciones registradas"
+                   styleClass="card-title"/>
+
+            <ListView fx:id="listaFunciones"
+                      VBox.vgrow="ALWAYS"/>
+
+            <HBox spacing="10">
+                <Button text="Cancelar"
+                        onAction="#cancelar"
+                        styleClass="danger-button"/>
+
+                <Button text="Finalizar"
+                        onAction="#finalizar"
+                        styleClass="primary-button"/>
+            </HBox>
+        </VBox>
+    </HBox>
+
+    <Button text="Volver"
+            onAction="#volver"
+            styleClass="secondary-button"
+            maxWidth="120"/>
+
+</VBox>

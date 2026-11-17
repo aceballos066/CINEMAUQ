@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.poo.viewController.VentaViewController"
+      spacing="14">
+
+    <VBox styleClass="header">
+        <Label text="Nueva Venta"
+               styleClass="header-title"/>
+
+        <Label text="El sistema habilita cada paso cuando el anterior está completo"
+               styleClass="header-subtitle"/>
+    </VBox>
+
+    <HBox spacing="16" VBox.vgrow="ALWAYS">
+        <padding>
+            <Insets top="18" right="18"
+                    bottom="18" left="18"/>
+        </padding>
+
+        <VBox styleClass="card"
+              spacing="9"
+              prefWidth="480">
+
+            <Label text="1. Cliente"
+                   styleClass="section-title"/>
+
+            <ComboBox fx:id="cbCliente"
+                      onAction="#seleccionarCliente"
+                      prefWidth="430"/>
+
+            <Label fx:id="lblCliente"/>
+
+            <Label fx:id="lblMembresia"
+                   styleClass="muted"/>
+
+            <Separator/>
+
+            <Label text="2. Película"
+                   styleClass="section-title"/>
+
+            <ComboBox fx:id="cbPelicula"
+                      onAction="#seleccionarPelicula"
+                      prefWidth="430"/>
+
+            <Label fx:id="lblPelicula"
+                   wrapText="true"/>
+
+            <Separator/>
+
+            <Label text="3. Función"
+                   styleClass="section-title"/>
+
+            <ComboBox fx:id="cbFuncion"
+                      onAction="#seleccionarFuncion"
+                      prefWidth="430"/>
+
+            <Label fx:id="lblFuncion"
+                   wrapText="true"/>
+
+            <Separator/>
+
+            <Label text="4. Asiento"
+                   styleClass="section-title"/>
+
+            <ComboBox fx:id="cbAsiento"
+                      onAction="#seleccionarAsiento"/>
+
+            <Label text="5. Tipo de entrada"
+                   styleClass="section-title"/>
+
+            <ComboBox fx:id="cbTipoEntrada"
+                      onAction="#calcularPrecio"/>
+        </VBox>
+
+        <VBox styleClass="card"
+              spacing="14"
+              HBox.hgrow="ALWAYS">
+
+            <Label text="Resumen de la compra"
+                   styleClass="card-title"/>
+
+            <GridPane hgap="16" vgap="15">
+
+                <Label text="Precio antes de membresía"
+                       GridPane.rowIndex="0"/>
+
+                <Label fx:id="lblPrecioOriginal"
+                       GridPane.columnIndex="1"
+                       GridPane.rowIndex="0"
+                       styleClass="metric"/>
+
+                <Label text="Descuento membresía"
+                       GridPane.rowIndex="1"/>
+
+                <Label fx:id="lblDescuento"
+                       GridPane.columnIndex="1"
+                       GridPane.rowIndex="1"
+                       styleClass="metric"/>
+
+                <Label text="TOTAL"
+                       GridPane.rowIndex="2"/>
+
+                <Label fx:id="lblTotal"
+                       GridPane.columnIndex="1"
+                       GridPane.rowIndex="2"
+                       styleClass="price"/>
+            </GridPane>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Button fx:id="btnConfirmar"
+                    text="CONFIRMAR VENTA"
+                    onAction="#confirmar"
+                    styleClass="success-button"
+                    maxWidth="Infinity"/>
+        </VBox>
+    </HBox>
+
+    <Button text="Volver"
+            onAction="#volver"
+            styleClass="secondary-button"
+            maxWidth="120"/>
+</VBox>

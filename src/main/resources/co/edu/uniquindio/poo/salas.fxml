@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.poo.viewController.SalaViewController"
+      spacing="14">
+
+    <VBox styleClass="header">
+        <Label text="Gestión de Salas"
+               styleClass="header-title"/>
+    </VBox>
+
+    <HBox spacing="16" VBox.vgrow="ALWAYS">
+        <padding>
+            <Insets top="20" right="20"
+                    bottom="20" left="20"/>
+        </padding>
+
+        <VBox styleClass="card"
+              spacing="9" prefWidth="360">
+
+            <TextField fx:id="txtCodigo"
+                       promptText="Código"/>
+
+            <TextField fx:id="txtNombre"
+                       promptText="Nombre"/>
+
+            <TextField fx:id="txtCapacidad"
+                       promptText="Capacidad máxima"/>
+
+            <TextField fx:id="txtFilas"
+                       promptText="Filas"/>
+
+            <TextField fx:id="txtColumnas"
+                       promptText="Columnas"/>
+
+            <ComboBox fx:id="cbTipo"/>
+
+            <HBox spacing="8">
+                <Button text="Registrar"
+                        onAction="#registrar"
+                        styleClass="success-button"/>
+
+                <Button text="Modificar"
+                        onAction="#modificar"
+                        styleClass="primary-button"/>
+
+                <Button text="Deshabilitar"
+                        onAction="#deshabilitar"
+                        styleClass="danger-button"/>
+            </HBox>
+
+            <Button text="Limpiar"
+                    onAction="#limpiar"
+                    styleClass="secondary-button"/>
+        </VBox>
+
+        <VBox styleClass="card"
+              spacing="9" HBox.hgrow="ALWAYS">
+
+            <Label text="Salas"
+                   styleClass="card-title"/>
+
+            <ListView fx:id="listaSalas"
+                      onMouseClicked="#seleccionar"
+                      VBox.vgrow="ALWAYS"/>
+
+            <Label text="Asientos de la sala"
+                   styleClass="section-title"/>
+
+            <ListView fx:id="listaAsientos"
+                      prefHeight="170"/>
+        </VBox>
+    </HBox>
+
+    <Button text="Volver"
+            onAction="#volver"
+            styleClass="secondary-button"
+            maxWidth="120"/>
+
+</VBox>

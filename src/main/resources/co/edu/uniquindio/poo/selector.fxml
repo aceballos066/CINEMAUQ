@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.poo.viewController.SelectorViewController"
+      spacing="24">
+    <children>
+        <VBox styleClass="header" spacing="4">
+            <Label text="CINEMAUQ" styleClass="header-title"/>
+            <Label text="Seleccione el perfil con el que desea ingresar"
+                   styleClass="header-subtitle"/>
+        </VBox>
+
+        <VBox spacing="18" alignment="CENTER" VBox.vgrow="ALWAYS">
+            <HBox spacing="20" alignment="CENTER">
+
+                <VBox styleClass="card" spacing="12" prefWidth="310">
+                    <Label text="Administrador" styleClass="card-title"/>
+                    <Label text="Gestiona películas, salas, funciones, tarifas y personal."
+                           wrapText="true" styleClass="muted"/>
+                    <ComboBox fx:id="cbAdministradores" prefWidth="270"/>
+                    <Button text="Ingresar" onAction="#ingresarAdministrador"
+                            styleClass="primary-button" maxWidth="Infinity"/>
+                    <Button text="Registrar nuevo" onAction="#registrarAdministrador"
+                            styleClass="secondary-button" maxWidth="Infinity"/>
+                </VBox>
+
+                <VBox styleClass="card" spacing="12" prefWidth="310">
+                    <Label text="Operario" styleClass="card-title"/>
+                    <Label text="Registra clientes, gestiona membresías, vende entradas y consulta reportes."
+                           wrapText="true" styleClass="muted"/>
+                    <ComboBox fx:id="cbOperarios" prefWidth="270"/>
+                    <Button text="Ingresar" onAction="#ingresarOperario"
+                            styleClass="primary-button" maxWidth="Infinity"/>
+                    <Button text="Registrar nuevo" onAction="#registrarOperario"
+                            styleClass="secondary-button" maxWidth="Infinity"/>
+                </VBox>
+
+                <VBox styleClass="card" spacing="12" prefWidth="310">
+                    <Label text="Cliente" styleClass="card-title"/>
+                    <Label text="Consulta cartelera, funciones, disponibilidad, tarifas, membresía y compras."
+                           wrapText="true" styleClass="muted"/>
+                    <ComboBox fx:id="cbClientes" prefWidth="270"/>
+                    <Button text="Ingresar" onAction="#ingresarCliente"
+                            styleClass="primary-button" maxWidth="Infinity"/>
+                    <Button text="Registrar nuevo" onAction="#registrarCliente"
+                            styleClass="secondary-button" maxWidth="Infinity"/>
+                </VBox>
+
+            </HBox>
+            <Label fx:id="lblResumen" styleClass="muted"/>
+        </VBox>
+    </children>
+
+    <padding>
+        <Insets bottom="24"/>
+    </padding>
+</VBox>

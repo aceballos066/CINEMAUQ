@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.poo.viewController.ClientePortalViewController"
+      spacing="12">
+
+    <VBox styleClass="header">
+        <Label text="Portal del Cliente" styleClass="header-title"/>
+        <HBox spacing="8">
+            <Label fx:id="lblCliente" styleClass="header-subtitle"/>
+            <Label text="•" styleClass="header-subtitle"/>
+            <Label fx:id="lblMembresia" styleClass="header-subtitle"/>
+        </HBox>
+    </VBox>
+
+    <TabPane fx:id="tabPane"
+             VBox.vgrow="ALWAYS"
+             tabClosingPolicy="UNAVAILABLE"
+             style="-fx-padding: 12;">
+
+        <tabs>
+            <Tab text="Cartelera">
+                <TextArea fx:id="txtCartelera" editable="false"/>
+            </Tab>
+
+            <Tab text="Funciones">
+                <TextArea fx:id="txtFunciones" editable="false"/>
+            </Tab>
+
+            <Tab text="Disponibilidad">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets top="16" right="16"
+                                bottom="16" left="16"/>
+                    </padding>
+
+                    <ComboBox fx:id="cbPelicula"
+                              onAction="#pelicula"
+                              prefWidth="420"/>
+
+                    <ComboBox fx:id="cbFuncion"
+                              onAction="#funcion"
+                              prefWidth="520"/>
+
+                    <ListView fx:id="listaAsientos"
+                              VBox.vgrow="ALWAYS"/>
+                </VBox>
+            </Tab>
+
+            <Tab text="Tarifas">
+                <TextArea fx:id="txtTarifas" editable="false"/>
+            </Tab>
+
+            <Tab text="Mi membresía">
+                <VBox spacing="12">
+                    <Label text="La información de membresía se muestra en el encabezado."
+                           styleClass="section-title"/>
+                    <Label text="Si no tiene membresía, puede solicitarla con un operario."
+                           styleClass="muted"/>
+                </VBox>
+            </Tab>
+
+            <Tab text="Mis compras">
+                <TextArea fx:id="txtCompras"
+                          editable="false"
+                          wrapText="true"/>
+            </Tab>
+        </tabs>
+    </TabPane>
+
+    <Button text="Volver"
+            onAction="#volver"
+            styleClass="secondary-button"
+            maxWidth="120"/>
+
+</VBox>

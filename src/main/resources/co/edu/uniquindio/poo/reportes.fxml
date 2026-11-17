@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.poo.viewController.ReportesViewController"
+      spacing="16">
+
+    <VBox styleClass="header">
+        <Label text="Reportes CINEMAUQ"
+               styleClass="header-title"/>
+    </VBox>
+
+    <HBox spacing="14">
+
+        <padding>
+            <Insets top="20"
+                    right="20"
+                    bottom="20"
+                    left="20"/>
+        </padding>
+
+        <VBox styleClass="card" prefWidth="230">
+            <Label text="Entradas activas"/>
+            <Label fx:id="lblEntradas"
+                   styleClass="metric"/>
+        </VBox>
+
+        <VBox styleClass="card" prefWidth="230">
+            <Label text="Ingresos"/>
+            <Label fx:id="lblIngresos"
+                   styleClass="metric"/>
+        </VBox>
+
+        <VBox styleClass="card" prefWidth="360">
+            <Label text="Película más vendida"/>
+            <Label fx:id="lblPelicula"
+                   styleClass="metric"
+                   wrapText="true"/>
+        </VBox>
+
+    </HBox>
+
+    <HBox spacing="16" VBox.vgrow="ALWAYS">
+
+        <padding>
+            <Insets top="20"
+                    right="20"
+                    bottom="20"
+                    left="20"/>
+        </padding>
+
+        <VBox styleClass="card"
+              spacing="10"
+              HBox.hgrow="ALWAYS">
+
+            <Label text="Ocupación de una función"
+                   styleClass="card-title"/>
+
+            <ComboBox fx:id="cbFuncion"
+                      prefWidth="480"/>
+
+            <Button text="Calcular"
+                    onAction="#ocupacion"
+                    styleClass="primary-button"/>
+
+            <Label fx:id="lblOcupacion"
+                   styleClass="section-title"/>
+        </VBox>
+
+        <VBox styleClass="card"
+              spacing="10"
+              HBox.hgrow="ALWAYS">
+
+            <Label text="Funciones por fecha"
+                   styleClass="card-title"/>
+
+            <DatePicker fx:id="dpFecha"
+                        onAction="#funcionesFecha"/>
+
+            <ListView fx:id="listaFecha"
+                      VBox.vgrow="ALWAYS"/>
+        </VBox>
+
+    </HBox>
+
+    <Button text="Volver"
+            onAction="#volver"
+            styleClass="secondary-button"
+            maxWidth="120"/>
+
+</VBox>
